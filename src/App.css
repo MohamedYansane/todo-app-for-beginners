@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+.todo-center {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282C34;
+    color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    border: 1px solid #fff;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-form {
+    display: flex;
+    flex-direction: row;
+    border-radius: 6px;
+    align-items: center;
+    padding: 6px;
+    color: #282C34;
+    background-color: #eef3f8;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#todo-input {
+    outline: none;
+    border: none;
+    background: none;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-add {
+    outline: none;
+    border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-add:hover {
+    background-color: #eef3f8;
+    color: #282C34;
+    border-radius: 6px;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
+}
+
+.w-4 {
+    width: 24px;
+    height: 24px;
+    color: #282C34;
+}
+ul
+li {
+    border: 1px solid #eef3f8;
 }
