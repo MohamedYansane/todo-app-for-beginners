@@ -1,0 +1,25 @@
+import './App.css';
+const App = () => {
+
+  const arr = [
+    {
+       id:1,
+       name: 'John',
+    },
+    {
+       id:2,
+       name: 'Paul',
+    },
+  ];
+
+  const listItem = arr.map(keys =>{return (<li key={keys.id}> {keys.name}</li>)})
+  return <div className="container-center">
+  {  
+      <ul>{listItem}</ul>
+  }
+  </div>
+    
+  
+}
+
+export default App;
