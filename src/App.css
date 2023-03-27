@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&family=Roboto+Mono:wght@200;400;700&display=swap');
 .todo-center {
     min-height: 100vh;
     display: flex;
@@ -5,6 +6,10 @@
     align-items: center;
     background-color: #282C34;
     color: #fff;
+}
+
+h1 {
+    font-family: 'Poppins';
 }
 
 .container {
@@ -34,7 +39,9 @@
 #todo-input {
     outline: none;
     border: none;
+    width: 350px;
     background: none;
+    font-family: "Poppins";
 }
 
 .btn-add {
@@ -57,7 +64,51 @@
     height: 24px;
     color: #282C34;
 }
-ul
-li {
-    border: 1px solid #eef3f8;
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+
+ul>li {
+    display: flex;
+    font-family: Poppins;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0px;
+    background-color: #60a5fa;
+    width: 450px;
+    /*10px top to bottom 20px left to right*/
+    padding: 10px 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.btnEdit,
+.btnDelete {
+    background: none;
+    border: none;
+}
+
+.btnEdit:hover,
+.btnDelete:hover {
+    background: black;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.edit-icon,
+.delete-icon {
+    color: #fff;
+}
+
+.todo-text {
+    flex: 1;
 }
