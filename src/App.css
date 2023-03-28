@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&family=Roboto+Mono:wght@200;400;700&display=swap');
 .todo-center {
     min-height: 100vh;
@@ -78,9 +79,11 @@ ul>li {
     gap: 10px;
     margin: 10px 0px;
     background-color: #60a5fa;
-    width: 450px;
+    width: 350px;
     /*10px top to bottom 20px left to right*/
-    padding: 10px 20px;
+
+
+/*    padding: 10px 20px;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -111,4 +114,4 @@ ul>li {
 
 .todo-text {
     flex: 1;
-}
+}*/
