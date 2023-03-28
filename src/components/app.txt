@@ -1,0 +1,74 @@
+import './App.css';
+import { useState } from 'react';
+const App = () => {
+  // the first is for single todo when we'll create
+  const [todo, setTodo] = useState("");
+  // for all todos we'll create
+  const [todos, setTodos] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // on va utiliser le spread operator ... pour faire passer
+    // notre object à notre todos. Date.now() permet d'avoir le millisecond pour chaque
+    //li car on veut que ça soit unique on peut utiliser le 
+    //package uuid mais ben là on utilise todo-date.now
+    if(todo !== "")
+    {
+      setTodos([{id:`${todo}-${Date.now()}`, todo:todo},...todos]);
+      console.log(todos);
+      setTodo("");
+    
+    }
+    
+  }
+
+  const handleDelete = (id) =>{
+    const deleteTo = todos.filter(todo => todo.id !== id );
+    setTodos([...deleteTo]);
+   
+  }
+  const handleEdit = (id) =>{
+    const editTo = todos.find(todo => todo.id === id );
+    setTodo(editTo.todo);
+  }
+  return <div className="todo-center">
+    <div className="container">
+          <h1>TODO APP</h1>
+          <form action="" className="todo-form" onSubmit={handleSubmit}>
+            <input type="text" name="" id="todo-input" value={todo} placeholder="Enter your todo" onChange={(e)=>{setTodo(e.target.value)}}  />
+              <button type="submit" className="btn-add">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path fillRule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zm9.586 4.594a.75.75 0 00-1.172-.938l-2.476 3.096-.908-.907a.75.75 0 00-1.06 1.06l1.5 1.5a.75.75 0 001.116-.062l3-3.75z" clipRule="evenodd" />
+                </svg>
+              </button>
+          </form>
+
+          <ul>
+            { todos.map(keys =>{
+                return( 
+                  <li className="singleTodo">
+                    <span className="todo-text"  key={keys.id}>{keys.todo}</span>
+                    <button className='btnEdit' onClick={()=>handleEdit(keys.id)}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 edit-icon">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                      </svg>
+                    </button>
+                    <button className='btnDelete' onClick={()=>handleDelete(keys.id)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 delete-icon">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                      </svg>
+    
+                    </button>
+                  </li>
+                )
+              })}
+          </ul>
+    </div>
+
+  </div>
+    
+  
+}
+
+export default App;
