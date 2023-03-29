@@ -15,6 +15,9 @@ module.exports = {
                 'corben': ['Corben'],
                 'red-hat': ['Red Hat Display', 'sans-serif'],
             },
+            colors: {
+                "very-dark-cyan": " hsl(183, 100%, 15%)",
+            }
         },
     },
     plugins: [],
